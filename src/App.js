@@ -70,12 +70,12 @@ function App() {
       <C.Form onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
         
-        <h3>grocery bud</h3>
+        <h3>Lista de compras</h3>
         <C.FormControl>
           <input
           type='text'
           className='grocery'
-          placeholder='e.g. eggs'
+          placeholder='Ovos...'
           value={name}
           onChange={(e) => setName(e.target.value)}
           />

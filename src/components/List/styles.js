@@ -36,7 +36,7 @@ export const EditButton = styled.button`
   background: transparent;
   border-color: transparent;
   cursor: pointer;
-  font-size: 0.7rem;
+  font-size: 1rem;
   margin: 0 0.15rem;
   transition: all 0.3s linear;
   color: hsl(125, 71%, 66%);
@@ -49,7 +49,7 @@ export const DeleteButton = styled.button`
   background: transparent;
   border-color: transparent;
   cursor: pointer;
-  font-size: 0.7rem;
+  font-size: 1rem;
   margin: 0 0.15rem;
   transition: all 0.3s linear;
   color: hsl(360, 71%, 66%);

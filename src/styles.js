@@ -18,6 +18,9 @@ export const SectionCenter = styled.section`
 
   @media screen and (min-width: 992px) {
   width: 95vw;
+ }
+ @media screen and (min-width: 768px) {
+  width: 80vw;
 }
 `
 export const Form = styled.form`
@@ -34,6 +37,9 @@ export const FormControl = styled.div`
   display: flex;
   justify-content: center;
 
+  input {
+    outline: none;
+  }
 
   .grocery {
   padding: 0.25rem;
