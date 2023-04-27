@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import * as C from './styles'
 
 
-const Alert = ({ type, msg, removeAlert, list }) => {
+export const Alert = ({ type, msg, removeAlert, list }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       removeAlert()
@@ -12,5 +12,3 @@ const Alert = ({ type, msg, removeAlert, list }) => {
   }, [list])
   return <C.Span><p className={`alert-${type}`}>{msg}</p></C.Span>
 }
-
-export default Alert

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import * as C from './styles.js'
+import { useHistory } from 'react-router-dom'
+import { AiOutlineInfoCircle } from 'react-icons/ai'
 
-import Alert from './components/Alert'
-import List from './components/List'
+import * as C from './styles.js'
+import { Alert, List } from '../../components/index.js'
+
 
 const getLocalStorage = () => {
   let list = localStorage.getItem('list')
@@ -12,17 +14,18 @@ const getLocalStorage = () => {
     return []
   }
 }
-function App() {
+export function Home() {
   const [name, setName] = useState('')
   const [isEditing, setIsEditing] = useState(false)
   const [editID, setEditID] = useState(null)
   const [alert, setAlert] = useState({ show: false, msg: '', type: '' })
   const [list, setList] = useState(getLocalStorage())
+  const history = useHistory()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!name) {
-      showAlert(true, 'danger', 'please enter value')
+      showAlert(true, 'danger', 'Por favor coloque um valor')
     } else if (name && isEditing) {
       setList(
         list.map((item) => {
@@ -35,9 +38,9 @@ function App() {
       setName('')
       setEditID(null)
       setIsEditing(false)
-      showAlert(true, 'success', 'value changed')
+      showAlert(true, 'success', 'Item editado')
     } else {
-      showAlert(true, 'success', 'item added to the list')
+      showAlert(true, 'success', 'Item adicionado')
       const newItem = { id: new Date().getTime().toString(), title: name }
 
       setList([...list, newItem])
@@ -48,11 +51,11 @@ function App() {
     setAlert({ show, type, msg })
   }
   const clearList = () => {
-    showAlert(true, 'danger', 'empty list')
+    showAlert(true, 'danger', 'Lista vazia')
     setList([])
   }
   const removeItem = (id) => {
-    showAlert(true, 'danger', 'item removed')
+    showAlert(true, 'danger', 'Item removido')
     setList(list.filter((item) => item.id !== id))
   }
   const editItem = (id) => {
@@ -65,8 +68,17 @@ function App() {
     localStorage.setItem('list', JSON.stringify(list))
   }, [list])
 
+  function handleInfoClick() {
+    setTimeout(() => {
+      history.push('/info')
+    }, 1000)  
+  }
+
   return (
     <C.SectionCenter>
+      <button className='info-button' onClick={handleInfoClick}>
+        <AiOutlineInfoCircle />
+      </button>
       <C.Form onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
         
@@ -80,7 +92,7 @@ function App() {
           onChange={(e) => setName(e.target.value)}
           />
           <C.SubmitButton type='submit'>
-            {isEditing ? 'edit' : 'submit'}
+            {isEditing ? 'Editar' : 'Enviar'}
           </C.SubmitButton>
         </C.FormControl>
       </C.Form>
@@ -88,12 +100,10 @@ function App() {
         <C.GroceryContainer>
           <List items={list} removeItem={removeItem} editItem={editItem} />
           <C.ClearButton onClick={clearList}>
-            clear items
+            Limpar lista
           </C.ClearButton>
         </C.GroceryContainer>
       )}
     </C.SectionCenter>
   )
 }
-
-export default App

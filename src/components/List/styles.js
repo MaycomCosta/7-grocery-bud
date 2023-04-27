@@ -14,19 +14,18 @@ export const Article = styled.article`
   text-transform: capitalize;
 
   :hover {
-    color: hsl(210, 22%, 49%);
+    p{
+      color: hsl(210, 22%, 49%);
+    }
     background: hsl(210, 36%, 96%);
   }
 
   p {
     margin-top: 0;
     margin-bottom: 0;
-    color: hsl(209, 61%, 16%);
+    color: #ffffff;
     letter-spacing: 2px;
     transition: all 0.3s linear;
-   :hover {
-    color: hsl(210, 22%, 49%);
-   }
   }
 `
 export const ButtonContainer = styled.div`

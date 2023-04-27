@@ -1,19 +1,19 @@
-# Grocery bud final project
+# Todo list
 
-<img src='./public/img/fullscreen.png'>
+<img src='./public/img/1.png'>
 
-> fullscreen view
 
-<img src='./public/img/ipadView.png'>
+<img src='./public/img/2.png'>
 
-> ipad view
 
-<img src='./public/img/iphoneView.png'>
+<img src='./public/img/3.png'>
 
-> iphone view
 
-<img src='./public/img/samsungView.png'>
+<img src='./public/img/4.png'>
 
-> samsung view
+
+<img src='./public/img/5.png'>
+
+
 
 

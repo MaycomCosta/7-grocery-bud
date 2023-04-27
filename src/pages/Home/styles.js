@@ -6,14 +6,32 @@ export const SectionCenter = styled.section`
   max-width: 35rem;
   margin-top: 8rem;
 
-  background: #fff;
+  background: #02192B;
   border-radius: 0.25rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s linear;
   padding: 2rem;
 
+
+  .info-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  color: #FF9D00;
+  font-weight: bold;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+
   :hover {
-   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: #FF7C03;
+  }
+}
+
+  :hover {
+   box-shadow: 0 5px 15px rgb(4 98 173 / 39%);
   }
 
   @media screen and (min-width: 992px) {
@@ -25,9 +43,8 @@ export const SectionCenter = styled.section`
 `
 export const Form = styled.form`
 
-
 h3 {
-  color: hsl(205, 86%, 17%);
+  color: #FF9D00;
   margin-bottom: 1.5rem;
   text-align: center;
   margin-top: 0;
@@ -59,7 +76,8 @@ export const FormControl = styled.div`
 }
 `
 export const SubmitButton = styled.button`
-    background: hsl(205, 86%, 81%);
+  background: ${props => props.isEditing ? '#ffff' : '#FF9D00'};
+  color: #ffffff;
   border-color: transparent;
   flex: 0 0 5rem;
   display: grid;
@@ -75,7 +93,7 @@ export const SubmitButton = styled.button`
   font-size: 0.85rem;
 
   :hover {
-    background: hsl(205, 78%, 60%);
+    background: #FF7C03;
     color: #fff;
   }
 `
