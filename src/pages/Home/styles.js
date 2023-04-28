@@ -8,7 +8,7 @@ export const SectionCenter = styled.section`
 
   background: #02192B;
   border-radius: 0.25rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgb(4 98 173 / 39%);
   transition: all 0.3s linear;
   padding: 2rem;
 
@@ -29,10 +29,6 @@ export const SectionCenter = styled.section`
     color: #FF7C03;
   }
 }
-
-  :hover {
-   box-shadow: 0 5px 15px rgb(4 98 173 / 39%);
-  }
 
   @media screen and (min-width: 992px) {
   width: 95vw;
@@ -88,7 +84,6 @@ export const SubmitButton = styled.button`
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
   cursor: pointer;
-  content: hsl(205, 78%, 60%);
   transition: all 0.3s linear;
   font-size: 0.85rem;
 
